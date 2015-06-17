@@ -1,7 +1,7 @@
 package lib.types.api;
 
-import lib.core.api.CoreApi;
-import lib.core.api.FormatApi;
+import com.fyxridd.lib.core.api.CoreApi;
+import com.fyxridd.lib.core.api.FormatApi;
 import lib.types.TypesMain;
 import org.bukkit.plugin.java.JavaPlugin;
 

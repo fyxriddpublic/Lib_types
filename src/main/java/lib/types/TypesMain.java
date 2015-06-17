@@ -1,8 +1,8 @@
 package lib.types;
 
-import lib.core.api.ConfigApi;
-import lib.core.api.CoreApi;
-import lib.core.api.event.ReloadConfigEvent;
+import com.fyxridd.lib.core.api.ConfigApi;
+import com.fyxridd.lib.core.api.CoreApi;
+import com.fyxridd.lib.core.api.event.ReloadConfigEvent;
 import lib.types.api.TypesPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

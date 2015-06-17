@@ -1,8 +1,8 @@
 package lib.types;
 
-import lib.core.api.CoreApi;
-import lib.core.api.hashList.HashList;
-import lib.core.api.hashList.HashListImpl;
+import com.fyxridd.lib.core.api.CoreApi;
+import com.fyxridd.lib.core.api.hashList.HashList;
+import com.fyxridd.lib.core.api.hashList.HashListImpl;
 import org.bukkit.Material;
 
 import java.util.List;

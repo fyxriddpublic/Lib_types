@@ -1,7 +1,7 @@
 package lib.types;
 
-import lib.core.api.hashList.HashList;
-import lib.core.api.hashList.HashListImpl;
+import com.fyxridd.lib.core.api.hashList.HashList;
+import com.fyxridd.lib.core.api.hashList.HashListImpl;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
