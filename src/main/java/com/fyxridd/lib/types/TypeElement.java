@@ -1,4 +1,4 @@
-package lib.types;
+package com.fyxridd.lib.types;
 
 public interface TypeElement {
 	/**

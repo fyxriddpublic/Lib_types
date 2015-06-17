@@ -1,6 +1,6 @@
-package lib.types.api;
+package com.fyxridd.lib.types.api;
 
-import lib.types.TypesMain;
+import com.fyxridd.lib.types.TypesMain;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.EntityType;

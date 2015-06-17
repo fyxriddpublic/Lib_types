@@ -1,4 +1,4 @@
-package lib.types;
+package com.fyxridd.lib.types;
 
 import com.fyxridd.lib.core.api.CoreApi;
 import com.fyxridd.lib.core.api.hashList.HashList;

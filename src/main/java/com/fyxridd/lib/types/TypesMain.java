@@ -1,9 +1,9 @@
-package lib.types;
+package com.fyxridd.lib.types;
 
 import com.fyxridd.lib.core.api.ConfigApi;
 import com.fyxridd.lib.core.api.CoreApi;
 import com.fyxridd.lib.core.api.event.ReloadConfigEvent;
-import lib.types.api.TypesPlugin;
+import com.fyxridd.lib.types.api.TypesPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.MemorySection;
@@ -45,7 +45,7 @@ public class TypesMain implements Listener{
 	}
 	
 	/**
-     * @see lib.types.api.TypesApi#reloadTypes(String, org.bukkit.configuration.file.YamlConfiguration)
+     * @see com.fyxridd.lib.types.api.TypesApi#reloadTypes(String, org.bukkit.configuration.file.YamlConfiguration)
 	 */
 	public static void reloadTypes(String pn, YamlConfiguration config) {
 		if (pn == null || config == null) return;
@@ -80,7 +80,7 @@ public class TypesMain implements Listener{
 	}
 
 	/**
-     * @see lib.types.api.TypesApi#checkEntity(String, String, org.bukkit.entity.EntityType)
+     * @see com.fyxridd.lib.types.api.TypesApi#checkEntity(String, String, org.bukkit.entity.EntityType)
 	 */
 	public static boolean checkEntity(String pn, String type, EntityType entityType){
         if (pn == null || type == null || entityType == null) return false;
@@ -95,7 +95,7 @@ public class TypesMain implements Listener{
 	}
 
 	/**
-     * @see lib.types.api.TypesApi#checkItem(String, String, org.bukkit.inventory.ItemStack)
+     * @see com.fyxridd.lib.types.api.TypesApi#checkItem(String, String, org.bukkit.inventory.ItemStack)
 	 */
 	public static boolean checkItem(String pn, String type, ItemStack is) {
         if (pn == null || type == null || is == null) return false;
@@ -111,7 +111,7 @@ public class TypesMain implements Listener{
 	}
 
     /**
-     * @see lib.types.api.TypesApi#checkBlock(String, String, org.bukkit.Material)
+     * @see com.fyxridd.lib.types.api.TypesApi#checkBlock(String, String, org.bukkit.Material)
      */
     public static boolean checkBlock(String pn, String type, Material material) {
         if (pn == null || type == null || material == null) return false;
