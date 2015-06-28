@@ -182,9 +182,7 @@ public class TypesMain implements Listener{
     }
 
     private void initConfig() {
-        List<String> filter = ConfigApi.getDefaultFilter();
-        filter.add("types.yml");
-        ConfigApi.register(TypesPlugin.file, TypesPlugin.dataPath, filter, TypesPlugin.pn, null);
+        ConfigApi.register(TypesPlugin.file, TypesPlugin.dataPath, TypesPlugin.pn, null);
         ConfigApi.loadConfig(TypesPlugin.pn);
     }
 
