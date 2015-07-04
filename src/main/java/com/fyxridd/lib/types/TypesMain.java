@@ -43,7 +43,15 @@ public class TypesMain implements Listener{
 	public void onReloadConfig(ReloadConfigEvent e) {
 		if (e.getPlugin().equals(TypesPlugin.pn)) loadConfig();
 	}
-	
+
+    /**
+     * @see com.fyxridd.lib.types.api.TypesApi#reloadTypes(String, File)
+     */
+    public static void reloadTypes(String pn, File file) {
+        if (pn == null || file == null) return;
+        reloadTypes(pn, CoreApi.loadConfigByUTF8(file));
+    }
+
 	/**
      * @see com.fyxridd.lib.types.api.TypesApi#reloadTypes(String, org.bukkit.configuration.file.YamlConfiguration)
 	 */
