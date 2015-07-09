@@ -24,10 +24,10 @@ public class TypesMain implements Listener{
     private static String savePath;
 
 	//插件名 类型名 类型信息
-	private static HashMap<String, HashMap<String, TypeElement>>
-		entityHash = new HashMap<String, HashMap<String,TypeElement>>(),
-		itemHash = new HashMap<String, HashMap<String,TypeElement>>(),
-        blockHash = new HashMap<String, HashMap<String, TypeElement>>();
+	private static HashMap<String, HashMap<String, BlockElement>> blockHash = new HashMap<String, HashMap<String, BlockElement>>();
+    private static HashMap<String, HashMap<String, EntityElement>> entityHash = new HashMap<String, HashMap<String, EntityElement>>();
+    private static HashMap<String, HashMap<String, ItemElement>> itemHash = new HashMap<String, HashMap<String, ItemElement>>();
+
 	
 	public TypesMain() {
         savePath = TypesPlugin.dataPath+File.separator+"types.yml";
@@ -58,9 +58,9 @@ public class TypesMain implements Listener{
 	public static void reloadTypes(String pn, YamlConfiguration config) {
 		if (pn == null || config == null) return;
 		//清除
-		entityHash.put(pn, new HashMap<String, TypeElement>());
-		itemHash.put(pn, new HashMap<String, TypeElement>());
-        blockHash.put(pn, new HashMap<String, TypeElement>());
+		entityHash.put(pn, new HashMap<String, EntityElement>());
+		itemHash.put(pn, new HashMap<String, ItemElement>());
+        blockHash.put(pn, new HashMap<String, BlockElement>());
 		//读取实体类型
 		if (config.contains("entity")) {
 			MemorySection ms = (MemorySection) config.get("entity");
@@ -94,8 +94,7 @@ public class TypesMain implements Listener{
         if (pn == null || type == null || entityType == null) return false;
 
 		try {
-			EntityElement entityElement = (EntityElement) entityHash.get(pn).get(type);
-			return entityElement.check(entityType);
+			return entityHash.get(pn).get(type).check(entityType);
 		} catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -109,9 +108,7 @@ public class TypesMain implements Listener{
         if (pn == null || type == null || is == null) return false;
 
         try {
-            if (pn == null) pn = TypesPlugin.pn;
-			ItemElement itemElement = (ItemElement) itemHash.get(pn).get(type);
-			return itemElement.check(is);
+			return itemHash.get(pn).get(type).check(is);
 		} catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -119,24 +116,24 @@ public class TypesMain implements Listener{
 	}
 
     /**
-     * @see com.fyxridd.lib.types.api.TypesApi#checkBlock(String, String, org.bukkit.Material)
+     * @see com.fyxridd.lib.types.api.TypesApi#checkBlock(String, String, org.bukkit.Material, byte)
      */
-    public static boolean checkBlock(String pn, String type, Material material) {
+    public static boolean checkBlock(String pn, String type, Material material, byte data) {
         if (pn == null || type == null || material == null) return false;
 
         try {
-            BlockElement blockElement = (BlockElement) blockHash.get(pn).get(type);
-            return blockElement.check(material);
+            BlockElement blockElement = blockHash.get(pn).get(type);
+            return blockElement.check(material, data);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public static boolean isSafeBlock(Material material) {
+    public static boolean isSafeBlock(Material material, byte data) {
         if (material == null) return false;
 
-        return checkBlock(TypesPlugin.pn, "safeBlocks", material);
+        return checkBlock(TypesPlugin.pn, "safeBlocks", material, data);
     }
 
 	/**

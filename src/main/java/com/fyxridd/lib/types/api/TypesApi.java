@@ -53,18 +53,20 @@ public class TypesApi {
      * @param plugin 插件名,可为null(null时返回false)
      * @param type 类型名,可为null(null时返回false)
      * @param material 材料,可为null(null时返回false)
+     * @param data 方块小id
      * @return 是否符合类型
      */
-    public static boolean checkBlock(String plugin, String type, Material material){
-        return TypesMain.checkBlock(plugin, type, material);
+    public static boolean checkBlock(String plugin, String type, Material material, byte data){
+        return TypesMain.checkBlock(plugin, type, material, data);
     }
 
     /**
      * 检测是否是安全的方块
      * @param material 材料,可为null(null时返回false)
+     * @param data 方块小id
      * @return 是否是安全的方块
      */
-    public static boolean isSafeBlock(Material material) {
-        return TypesMain.isSafeBlock(material);
+    public static boolean isSafeBlock(Material material, byte data) {
+        return TypesMain.isSafeBlock(material, data);
     }
 }

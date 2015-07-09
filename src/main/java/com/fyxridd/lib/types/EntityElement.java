@@ -6,7 +6,7 @@ import org.bukkit.entity.EntityType;
 
 import java.util.List;
 
-public class EntityElement implements TypeElement{
+public class EntityElement{
 	private HashList<EntityType> entities;
 	
 	public EntityElement(List<EntityType> list) {
@@ -17,7 +17,6 @@ public class EntityElement implements TypeElement{
 	/**
 	 * @param obj 是EntityType
 	 */
-	@Override
 	public boolean check(Object obj) {
 		EntityType type = (EntityType) obj;
 		return entities.has(type);

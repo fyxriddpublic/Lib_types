@@ -11,14 +11,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ItemElement implements TypeElement{
+public class ItemElement{
 	private HashList<Integer> ids = null;
 	private int dura = -1;
 	private String name = null;
 	private List<String> lore = null;
 	private HashMap<Enchantment, Integer> enchants = null;
 	
-	@SuppressWarnings("deprecation")
 	public ItemElement(MemorySection ms) {
 		//ids
 		if (ms.contains("ids")) {
@@ -46,7 +45,6 @@ public class ItemElement implements TypeElement{
 	 * @param obj 是ItemStack的实例
 	 * @return 类型是否满足
 	 */
-	@SuppressWarnings("deprecation")
 	public boolean check(Object obj) {
 		ItemStack is = (ItemStack) obj;
 		//ids
