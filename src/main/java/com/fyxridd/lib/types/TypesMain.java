@@ -24,11 +24,10 @@ public class TypesMain implements Listener{
     private static String savePath;
 
 	//插件名 类型名 类型信息
-	private static HashMap<String, HashMap<String, BlockElement>> blockHash = new HashMap<String, HashMap<String, BlockElement>>();
-    private static HashMap<String, HashMap<String, EntityElement>> entityHash = new HashMap<String, HashMap<String, EntityElement>>();
-    private static HashMap<String, HashMap<String, ItemElement>> itemHash = new HashMap<String, HashMap<String, ItemElement>>();
+	private static HashMap<String, HashMap<String, BlockElement>> blockHash = new HashMap<>();
+    private static HashMap<String, HashMap<String, EntityElement>> entityHash = new HashMap<>();
+    private static HashMap<String, HashMap<String, ItemElement>> itemHash = new HashMap<>();
 
-	
 	public TypesMain() {
         savePath = TypesPlugin.dataPath+File.separator+"types.yml";
         //初始化配置
