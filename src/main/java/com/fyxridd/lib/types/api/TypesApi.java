@@ -2,28 +2,17 @@ package com.fyxridd.lib.types.api;
 
 import com.fyxridd.lib.types.TypesMain;
 import org.bukkit.Material;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
-import java.io.File;
-
 public class TypesApi {
     /**
-     * @param file yml文件,可为null(null时无效果)
-     * @see #reloadTypes(String, org.bukkit.configuration.file.YamlConfiguration)
-     */
-    public static void reloadTypes(String plugin, File file) {
-        TypesMain.reloadTypes(plugin, file);
-    }
-
-    /**
      * 重新读取类型配置
+     * 会读取'插件名/types.yml'的文件
      * @param plugin 插件名,可为null(null时无效果)
-     * @param config 配置,可为null(null时无效果)
      */
-    public static void reloadTypes(String plugin, YamlConfiguration config) {
-        TypesMain.reloadTypes(plugin, config);
+    public static void reloadTypes(String plugin) {
+        TypesMain.reloadTypes(plugin);
     }
 
     /**

@@ -44,16 +44,18 @@ public class TypesMain implements Listener{
 	}
 
     /**
-     * @see com.fyxridd.lib.types.api.TypesApi#reloadTypes(String, File)
+     * @see com.fyxridd.lib.types.api.TypesApi#reloadTypes(String)
      */
+    public static void reloadTypes(String pn) {
+        if (pn == null) return;
+        reloadTypes(pn, CoreApi.loadConfigByUTF8(new File(CoreApi.pluginPath, pn+"/types.yml")));
+    }
+
     public static void reloadTypes(String pn, File file) {
         if (pn == null || file == null) return;
         reloadTypes(pn, CoreApi.loadConfigByUTF8(file));
     }
 
-	/**
-     * @see com.fyxridd.lib.types.api.TypesApi#reloadTypes(String, org.bukkit.configuration.file.YamlConfiguration)
-	 */
 	public static void reloadTypes(String pn, YamlConfiguration config) {
 		if (pn == null || config == null) return;
 		//清除
