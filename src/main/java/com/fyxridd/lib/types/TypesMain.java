@@ -188,7 +188,7 @@ public class TypesMain implements Listener{
     }
 
     private void initConfig() {
-        ConfigApi.register(TypesPlugin.file, TypesPlugin.dataPath, TypesPlugin.pn, null);
+        ConfigApi.register(TypesPlugin.file, TypesPlugin.dataPath, TypesPlugin.pn);
         ConfigApi.loadConfig(TypesPlugin.pn);
     }
 
