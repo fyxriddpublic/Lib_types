@@ -1,10 +1,9 @@
 package com.fyxridd.lib.types;
 
 import com.fyxridd.lib.core.api.CoreApi;
-import com.fyxridd.lib.core.api.hashList.HashList;
-import com.fyxridd.lib.core.api.hashList.HashListImpl;
 import org.bukkit.Material;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class BlockElement{
@@ -53,10 +52,10 @@ public class BlockElement{
         }
     }
 
-	private HashList<MaterialInfo> materials;
+	private HashSet<MaterialInfo> materials;
 
 	public BlockElement(List<String> list) {
-        materials = new HashListImpl<MaterialInfo>();
+        materials = new HashSet<>();
         for (String s:list) {
             MaterialInfo info = MaterialInfo.load(s);
             if (info != null) materials.add(info);
@@ -64,6 +63,6 @@ public class BlockElement{
 	}
 
 	public boolean check(Material material, byte data) {
-		return materials.has(new MaterialInfo(material, data));
+		return materials.contains(new MaterialInfo(material, data));
 	}
 }
